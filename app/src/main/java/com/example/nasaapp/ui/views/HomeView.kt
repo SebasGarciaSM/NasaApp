@@ -1,21 +1,12 @@
 package com.example.nasaapp.ui.views
 
-import android.util.Log
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BlurOn
 import androidx.compose.material.icons.filled.Landscape
@@ -26,40 +17,38 @@ import androidx.compose.material.icons.filled.Public
 import androidx.compose.material.icons.filled.TravelExplore
 import androidx.compose.material.icons.filled.VideoLibrary
 import androidx.compose.material.icons.filled.WbSunny
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.nasaapp.R
 import com.example.nasaapp.ui.core.HomeCard
 import com.example.nasaapp.ui.models.HomeCardConfig
+import com.example.nasaapp.ui.navigation.AppRoutes
 import com.example.nasaapp.ui.theme.AppColors
 
 @Composable
-fun HomeView() {
-    HomeViewContent()
+fun HomeView(navController: NavHostController) {
+    HomeViewContent(
+        navController = navController,
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeViewContent() {
+fun HomeViewContent(navController: NavHostController) {
     val cards: List<HomeCardConfig> = listOf(
         HomeCardConfig(
             icon = Icons.Filled.Photo,
             title = stringResource(R.string.apod_astronomy_picture_of_the_day),
             lightColor = AppColors.apodLight,
             darkColor = AppColors.apodDark,
-            onTap = {}
+            onTap = { navController.navigate(AppRoutes.APOD) }
         ),
         HomeCardConfig(
             icon = Icons.Filled.Landscape,
