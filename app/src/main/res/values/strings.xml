@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">NasaApp</string>
+    <string name="apod_astronomy_picture_of_the_day">APOD (Astronomy Picture of the Day)</string>
+    <string name="mars_rover_photos">Mars Rover Photos</string>
+    <string name="neows_asteroids">NeoWs (Asteroids)</string>
+    <string name="epic_earth_imagery">EPIC (Earth Imagery)</string>
+    <string name="donki_solar_activity">DONKI (Solar Activity)</string>
+    <string name="techtransfer">TechTransfer</string>
+    <string name="image_and_video_library">Image and Video Library</string>
+    <string name="exoplanet_archive">Exoplanet Archive</string>
+    <string name="earth_assets">Earth Assets</string>
+    <string name="nasa_app">NASA App</string>
+</resources>
