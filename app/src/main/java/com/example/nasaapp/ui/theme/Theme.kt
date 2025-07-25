@@ -14,14 +14,20 @@ private val DarkColorScheme = darkColorScheme(
     primary = AppColors.Purple80,
     secondary = AppColors.PurpleGrey80,
     tertiary = AppColors.Pink80,
-
+    surface = AppColors.primaryDark,
+    onPrimary = AppColors.white,
+    onSecondary = AppColors.secondary,
+    onSurface = AppColors.white,
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = AppColors.Purple40,
     secondary = AppColors.PurpleGrey40,
     tertiary = AppColors.Pink40,
-
+    surface = AppColors.white,
+    onPrimary = AppColors.white,
+    onSecondary = AppColors.secondary,
+    onSurface = AppColors.primaryDark,
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
