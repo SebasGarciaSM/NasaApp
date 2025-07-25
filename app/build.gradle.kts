@@ -84,4 +84,7 @@ dependencies {
     //Bundle Compose
     implementation(libs.bundles.compose)
 
+    //Lottie
+    implementation(libs.lottie.compose)
+
 }

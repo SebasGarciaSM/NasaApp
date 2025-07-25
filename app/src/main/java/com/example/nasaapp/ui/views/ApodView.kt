@@ -38,6 +38,7 @@ import coil.compose.AsyncImage
 import com.example.nasaapp.R
 import com.example.nasaapp.domain.entities.ApodEntity
 import com.example.nasaapp.domain.models.DomainState
+import com.example.nasaapp.ui.core.LoadingView
 import com.example.nasaapp.ui.theme.AppColors
 import com.example.nasaapp.ui.viewModels.ApodViewModel
 
@@ -84,7 +85,9 @@ fun ApodViewContent(
                     }
                 }
 
-                DomainState.Loading -> CircularProgressIndicator()
+                DomainState.Loading -> {
+                    LoadingView(modifier = Modifier.fillMaxSize())
+                }
 
                 is DomainState.Success -> ApodSuccessView(
                     modifier = Modifier.fillMaxSize(),
