@@ -55,7 +55,7 @@ fun HomeViewContent(navController: NavHostController) {
             title = stringResource(R.string.mars_rover_photos),
             lightColor = AppColors.marsLight,
             darkColor = AppColors.marsDark,
-            onTap = {}
+            onTap = { navController.navigate(AppRoutes.MARS_PHOTOS) }
         ),
         HomeCardConfig(
             icon = Icons.Filled.BlurOn,

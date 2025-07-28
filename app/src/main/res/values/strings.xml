@@ -12,4 +12,7 @@
     <string name="nasa_app">NASA App</string>
     <string name="overview">Overview</string>
     <string name="retry">Retry</string>
+    <string name="select_date">Select Date</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
 </resources>

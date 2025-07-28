@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.nasaapp.ui.views.ApodView
 import com.example.nasaapp.ui.views.HomeView
+import com.example.nasaapp.ui.views.MarsRoverView
 
 @Composable
 fun AppNavigation() {
@@ -17,5 +18,6 @@ fun AppNavigation() {
     ) {
         composable(AppRoutes.HOME) { HomeView(navController) }
         composable(AppRoutes.APOD) { ApodView(navController) }
+        composable(AppRoutes.MARS_PHOTOS) { MarsRoverView(navController) }
     }
 }
