@@ -38,6 +38,7 @@ import coil.compose.AsyncImage
 import com.example.nasaapp.R
 import com.example.nasaapp.domain.entities.ApodEntity
 import com.example.nasaapp.domain.models.DomainState
+import com.example.nasaapp.ui.core.ErrorView
 import com.example.nasaapp.ui.core.LoadingView
 import com.example.nasaapp.ui.theme.AppColors
 import com.example.nasaapp.ui.viewModels.ApodViewModel
@@ -77,7 +78,11 @@ fun ApodViewContent(
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
             when (state) {
-                is DomainState.Error -> Text("Error")
+                is DomainState.Error -> {
+                    ErrorView(modifier = Modifier.fillMaxSize(), errorMessage = state.message) {
+                        loadApod()
+                    }
+                }
 
                 DomainState.Initial -> {
                     LaunchedEffect(Unit) {

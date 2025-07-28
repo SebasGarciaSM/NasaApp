@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = AppColors.Purple80,
+    primary = AppColors.primaryLight,
     secondary = AppColors.PurpleGrey80,
     tertiary = AppColors.Pink80,
     surface = AppColors.primaryDark,
@@ -21,13 +21,13 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = AppColors.Purple40,
-    secondary = AppColors.PurpleGrey40,
-    tertiary = AppColors.Pink40,
-    surface = AppColors.white,
+    primary = AppColors.primary,
+    secondary = AppColors.secondary,
+    //surface = AppColors.white,
     onPrimary = AppColors.white,
-    onSecondary = AppColors.secondary,
-    onSurface = AppColors.primaryDark,
+    onSecondary = AppColors.secondaryDark,
+    onSurface = AppColors.secondaryDark,
+    background = AppColors.blueDark
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
@@ -59,6 +59,6 @@ fun NasaAppTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
     )
 }
