@@ -147,7 +147,7 @@ private fun MarsPhotosViewContent(
             when (state) {
                 is DomainState.Error -> {
                     ErrorView(modifier = Modifier.fillMaxSize(), errorMessage = state.message) {
-
+                        loadMarsPhotos()
                     }
                 }
 
