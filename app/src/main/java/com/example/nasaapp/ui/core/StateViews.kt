@@ -1,6 +1,7 @@
 package com.example.nasaapp.ui.core
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +21,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.airbnb.lottie.Lottie
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
@@ -94,5 +98,34 @@ fun ErrorView(modifier: Modifier = Modifier, errorMessage: String, onRetry: () -
                 }
             }
         }
+    }
+}
+
+@Composable
+fun NoDataFoundLottie(modifier: Modifier = Modifier, message: String) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+        val preLoaderLottieComposition by rememberLottieComposition(
+            LottieCompositionSpec.RawRes(
+                R.raw.space_boy_developer,
+            )
+        )
+
+        val preLoaderProgress by animateLottieCompositionAsState(
+            preLoaderLottieComposition,
+            iterations = LottieConstants.IterateForever,
+            isPlaying = true,
+        )
+
+        LottieAnimation(
+            composition = preLoaderLottieComposition,
+            progress = { preLoaderProgress },
+            modifier = Modifier.size(200.dp),
+        )
+        Text(
+            stringResource(R.string.no_data_found), style = TextStyle(
+                fontSize = 18.sp
+            )
+        )
+        Text(message)
     }
 }

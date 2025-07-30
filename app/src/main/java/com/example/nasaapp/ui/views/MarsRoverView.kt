@@ -38,6 +38,7 @@ import com.example.nasaapp.ui.core.DatePickerDialogComposable
 import com.example.nasaapp.ui.core.ErrorView
 import com.example.nasaapp.ui.core.LoadingView
 import com.example.nasaapp.ui.core.MarsPhotoCard
+import com.example.nasaapp.ui.core.NoDataFoundLottie
 import com.example.nasaapp.ui.theme.AppColors
 import com.example.nasaapp.ui.viewModels.MarsRoverViewModel
 import java.time.LocalDate
@@ -163,14 +164,22 @@ private fun MarsPhotosViewContent(
                 }
 
                 is DomainState.Success -> {
-                    LazyColumn(
-                        modifier = Modifier.padding(horizontal = 16.dp)
-                    ) {
-                        items(state.data) { item ->
-                            MarsPhotoCard(
-                                modifier = Modifier.padding(vertical = 12.dp),
-                                marsPhoto = item
+                    if (state.data.isEmpty()) {
+                        NoDataFoundLottie(
+                            modifier = Modifier.fillMaxSize(), message = stringResource(
+                                R.string.please_try_again_with_another_date
                             )
+                        )
+                    } else {
+                        LazyColumn(
+                            modifier = Modifier.padding(horizontal = 16.dp)
+                        ) {
+                            items(state.data) { item ->
+                                MarsPhotoCard(
+                                    modifier = Modifier.padding(vertical = 12.dp),
+                                    marsPhoto = item
+                                )
+                            }
                         }
                     }
                 }

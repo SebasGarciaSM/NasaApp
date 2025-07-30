@@ -16,4 +16,6 @@
     <string name="cancel">Cancel</string>
     <string name="accept">Accept</string>
     <string name="select_a_date">Select a date</string>
+    <string name="no_data_found">No data found</string>
+    <string name="please_try_again_with_another_date">Please try again with another date</string>
 </resources>
