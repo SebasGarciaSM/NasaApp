@@ -1,7 +1,6 @@
 package com.example.nasaapp.data.models
 
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.Serializable
 
 data class ApodModel(
     @SerializedName("title") val title: String,

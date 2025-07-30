@@ -19,9 +19,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.nasaapp.R
+import com.example.nasaapp.domain.entities.MarsPhotoEntity
 
 @Composable
-fun MarsPhotoCard(modifier: Modifier = Modifier) {
+fun MarsPhotoCard(modifier: Modifier = Modifier, marsPhoto: MarsPhotoEntity) {
     Card(
         modifier = modifier,
         elevation = CardDefaults.cardElevation(6.dp),
@@ -30,15 +31,15 @@ fun MarsPhotoCard(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier.wrapContentSize()
         ) {
-            Image(
+            AsyncImage(
                 modifier = Modifier.fillMaxWidth(),
-                painter = painterResource(id = R.drawable.apod),
+                model = marsPhoto.imgSrc,
                 contentDescription = "",
                 contentScale = ContentScale.Crop,
             )
             Column(modifier = Modifier.padding(12.dp)) {
-                Text("Camera: THIS IS THE CAMERA NAME")
-                Text("Date: THIS IS TH DATE")
+                Text("Camera: ${marsPhoto.cameraName}")
+                Text("Date: ${marsPhoto.earthDate}")
             }
         }
     }
@@ -47,5 +48,13 @@ fun MarsPhotoCard(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun MarsPhotoCardPreview() {
-    MarsPhotoCard()
+    MarsPhotoCard(
+        marsPhoto = MarsPhotoEntity(
+            id = "",
+            imgSrc = "",
+            earthDate = "",
+            cameraName = "",
+            roverName = ""
+        )
+    )
 }

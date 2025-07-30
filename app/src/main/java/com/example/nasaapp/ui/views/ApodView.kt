@@ -56,7 +56,7 @@ fun ApodView(navController: NavHostController, viewModel: ApodViewModel = hiltVi
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ApodViewContent(
+private fun ApodViewContent(
     navController: NavHostController,
     state: DomainState<ApodEntity>,
     loadApod: () -> Unit
@@ -104,7 +104,7 @@ fun ApodViewContent(
 }
 
 @Composable
-fun ApodSuccessView(modifier: Modifier = Modifier, data: ApodEntity) {
+private fun ApodSuccessView(modifier: Modifier = Modifier, data: ApodEntity) {
     Column(
         modifier = modifier
             .padding(horizontal = 16.dp, vertical = 10.dp)

@@ -2,6 +2,7 @@ package com.example.nasaapp.di
 
 import com.example.nasaapp.BuildConfig
 import com.example.nasaapp.data.network.ApodApiClient
+import com.example.nasaapp.data.network.MarsPhotosApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +28,12 @@ object NetworkModule {
     @Singleton
     fun provideApodApiClient(retrofit: Retrofit): ApodApiClient {
         return retrofit.create(ApodApiClient::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMarsPhotosApiClient(retrofit: Retrofit): MarsPhotosApiClient {
+        return retrofit.create(MarsPhotosApiClient::class.java)
     }
 
 }

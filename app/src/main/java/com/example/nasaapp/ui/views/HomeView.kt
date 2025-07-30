@@ -41,7 +41,7 @@ fun HomeView(navController: NavHostController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeViewContent(navController: NavHostController) {
+private fun HomeViewContent(navController: NavHostController) {
     val cards: List<HomeCardConfig> = listOf(
         HomeCardConfig(
             icon = Icons.Filled.Photo,
