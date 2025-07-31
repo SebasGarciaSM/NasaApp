@@ -18,4 +18,6 @@
     <string name="select_a_date">Select a date</string>
     <string name="no_data_found">No data found</string>
     <string name="please_try_again_with_another_date">Please try again with another date</string>
+    <string name="latitude">Latitude: %1$s</string>
+    <string name="longitude">Longitude: %1$s</string>
 </resources>

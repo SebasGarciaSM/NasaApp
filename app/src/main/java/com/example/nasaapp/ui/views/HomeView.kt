@@ -62,14 +62,14 @@ private fun HomeViewContent(navController: NavHostController) {
             title = stringResource(R.string.neows_asteroids),
             lightColor = AppColors.asteroidsLight,
             darkColor = AppColors.asteroidsDark,
-            onTap = {}
+            onTap = { }
         ),
         HomeCardConfig(
             icon = Icons.Filled.Public,
             title = stringResource(R.string.epic_earth_imagery),
             lightColor = AppColors.epicLight,
             darkColor = AppColors.epicDark,
-            onTap = {}
+            onTap = { navController.navigate(AppRoutes.EPIC) }
         ),
         HomeCardConfig(
             icon = Icons.Filled.WbSunny,
